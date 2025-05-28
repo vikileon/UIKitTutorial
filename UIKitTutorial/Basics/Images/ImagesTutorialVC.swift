@@ -8,22 +8,31 @@
 import UIKit
 
 class ImagesTutorialVC: UIViewController {
+    
+    private var imageView: UIImageView = {
+       let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.tintColor = .systemBlue
+        
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        imageView.image = UIImage(systemName: "paperplane")
+        
+        view.addSubview(imageView)
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+#Preview {
+    ImagesTutorialVC()
 }
