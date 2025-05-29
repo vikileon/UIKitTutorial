@@ -61,12 +61,10 @@ class ActionButtonView: UIView {
     }
     
     @objc func handlePrimaryTap() {
-        print("DEBUG: Primary button tapped")
         delegate?.onPrimaryTap()
     }
     
     @objc func handleSecondaryTap() {
-        print("DEBUG: Secondary button tapped")
         delegate?.onSecondaryTap()
     }
 }
